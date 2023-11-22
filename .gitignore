@@ -1,0 +1,11 @@
+﻿Dist
+Dist-BA2-Textures
+Dist-BA2-Main
+Tools/BSArch64.exe
+Tools/Caprica-0.3.0.exe
+Tools/Caprica-Experimental.exe
+Tools/7za.dll
+Tools/7za.exe
+Tools/7zxa.dll
+Tools/Spriggit.CLI.exe
+*.log
