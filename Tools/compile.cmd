@@ -27,41 +27,15 @@ mkdir "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist-BA2-Main\
 @REM mkdir "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist-BA2-Textures\textures\setdressing\terminals\splashscreens\"
 
 @REM Compile and deploy Scripts to Dist-BA2-Main folder
-@echo "Compile VPI_Debug.psc to Dist-BA2-Main folder"
-Caprica-Experimental.exe --game starfield --flags "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Tools\Starfield_Papyrus_Flags.flg" --import "C:\Repositories\Public\Starfield-Script-Source;C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Source\Papyrus" --output "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist-BA2-Main\Scripts" "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Source\Papyrus\VPI_Debug.psc" && (
-  @echo "VPI_Debug.psc successfully compiled"
+@echo "Compiling all script in Source/Papyrus to Dist-BA2-Main folder"
+Caprica-0.3.0.exe --game starfield --import "C:\Repositories\Public\Starfield-Script-Source;C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Source\Papyrus" --output "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist-BA2-Main\Scripts" "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Source\Papyrus" -R -q && (
+  @echo "Compile all scripts has successfully compiled"
   (call )
 ) || (
-  @echo "Error:  VPI_Debug.psc failed to compile <======================================="
+  @echo "Error:  Compile all scripts has failed to compile <======================================="
   exit /b 1
 )
 
-@echo "Compile VPI_GameUtilities.psc to Dist-BA2-Main folder"
-Caprica-Experimental.exe --game starfield --flags "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Tools\Starfield_Papyrus_Flags.flg" --import "C:\Repositories\Public\Starfield-Script-Source;C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Source\Papyrus" --output "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist-BA2-Main\Scripts" "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Source\Papyrus\VPI_GameUtilities.psc" && (
-  @echo "VPI_GameUtilities.psc successfully compiled"
-  (call )
-) || (
-  @echo "Error:  VPI_GameUtilities.psc failed to compile <======================================="
-  exit /b 1
-)
-
-@echo "Compile VPI_NPCUtilities.psc to Dist-BA2-Main folder"
-Caprica-Experimental.exe --game starfield --flags "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Tools\Starfield_Papyrus_Flags.flg" --import "C:\Repositories\Public\Starfield-Script-Source;C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Source\Papyrus" --output "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist-BA2-Main\Scripts" "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Source\Papyrus\VPI_NPCUtilities.psc" && (
-  @echo "VPI_NPCUtilities.psc successfully compiled"
-  (call )
-) || (
-  @echo "Error:  VPI_NPCUtilities.psc failed to compile <======================================="
-  exit /b 1
-)
-
-@echo "Compile VPI_ScalingUtilities.psc to Dist-BA2-Main folder"
-Caprica-Experimental.exe --game starfield --flags "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Tools\Starfield_Papyrus_Flags.flg" --import "C:\Repositories\Public\Starfield-Script-Source;C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Source\Papyrus" --output "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist-BA2-Main\Scripts" "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Source\Papyrus\VPI_ScalingUtilities.psc" && (
-  @echo "VPI_ScalingUtilities.psc successfully compiled"
-  (call )
-) || (
-  @echo "Error:  VPI_ScalingUtilities.psc failed to compile <======================================="
-  exit /b 1
-)
 
 @REM ESM is purely binary so need to pull from starfield dir where xedit has to have it 
 @echo "Copying the ESM from MO2 into the Dist folder"
