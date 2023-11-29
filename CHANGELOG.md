@@ -1,5 +1,8 @@
 # V1.0 Permutations
 
+## V1.0.3
+* Added message display utility
+
 ## V1.0.2
 * Moved rare books leveled item list to core so "Cora Can Read" mod can use it also
 

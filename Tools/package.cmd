@@ -9,4 +9,4 @@ REM Clear Dist DIR
 del /q "C:\Users\degre\Downloads\VenpiCore.zip"
 
 REM Archive Dist Dir
-.\7za.exe a -tzip "C:\Users\degre\Downloads\VenpiCore.zip" "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist\*.*"
+"D:\Program Files\PexTools\7za.exe" a -tzip "C:\Users\degre\Downloads\VenpiCore.zip" "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist\*.*"

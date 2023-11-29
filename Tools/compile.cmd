@@ -28,7 +28,7 @@ mkdir "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist-BA2-Main\
 
 @REM Compile and deploy Scripts to Dist-BA2-Main folder
 @echo "Compiling all script in Source/Papyrus to Dist-BA2-Main folder"
-Caprica-0.3.0.exe --game starfield --import "C:\Repositories\Public\Starfield-Script-Source;C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Source\Papyrus" --output "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist-BA2-Main\Scripts" "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Source\Papyrus" -R -q && (
+"D:\Program Files\PexTools\Caprica-0.3.0.exe" --game starfield --import "C:\Repositories\Public\Starfield-Script-Source;C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Source\Papyrus" --output "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist-BA2-Main\Scripts" "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Source\Papyrus" -R -q && (
   @echo "Compile all scripts has successfully compiled"
   (call )
 ) || (
@@ -44,7 +44,7 @@ copy /y "D:\MO2Staging\Starfield\mods\VenpiCore-Experimental\VenpiCore.esm" "C:\
 
 @REM Create and copy the BA2 Textures Archive to Dist folder
 @REM @echo "Creating the BA2 Textures Archive"
-@REM BSArch64.exe pack "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist-BA2-Textures" "VenpiCore - Textures.ba2" -sf1dds -mt && (
+@REM "D:\Program Files\xEdit\BSArch64.exe" pack "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist-BA2-Textures" "VenpiCore - Textures.ba2" -sf1dds -mt && (
 @REM   @echo "Textures Archive successfully assembled"
 @REM   (call )
 @REM ) || (
@@ -54,7 +54,7 @@ copy /y "D:\MO2Staging\Starfield\mods\VenpiCore-Experimental\VenpiCore.esm" "C:\
 
 @REM Create and copy the BA2 Main Archive to Dist folder
 @echo "Creating the BA2 Main Archive"
-BSArch64.exe pack "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist-BA2-Main" "VenpiCore - Main.ba2" -sf1 -mt && (
+"D:\Program Files\xEdit\BSArch64.exe" pack "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist-BA2-Main" "VenpiCore - Main.ba2" -sf1 -mt && (
   @echo "Main Archive successfully assembled"
   (call )
 ) || (
@@ -62,6 +62,7 @@ BSArch64.exe pack "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Di
   exit /b 1
 )
 
+@REM Copying the BA2 Archives to the Dist folder
 @echo "Copying the BA2 Archives to the Dist folder"
 @REM copy /y "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist-BA2-Textures\VenpiCore - Textures.ba2" "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist"
 copy /y "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist-BA2-Main\VenpiCore - Main.ba2" "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist"
