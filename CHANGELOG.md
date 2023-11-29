@@ -1,5 +1,8 @@
 # V1.0 Permutations
 
+## V1.0.4
+* Added injector utilities that will be used by "Cora Wants All The Book" and the new split dynamic scaling mods
+
 ## V1.0.3
 * Added message display utility
 
