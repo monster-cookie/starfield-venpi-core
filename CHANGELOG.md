@@ -1,5 +1,8 @@
 # V1.0 Permutations
 
+## V1.0.5
+* New cloak ability injector for the upcoming split dynamic scaling mods and new NPC resizer
+
 ## V1.0.4
 * Added injector utilities that will be used by "Cora Wants All The Book" and the new split dynamic scaling mods
 

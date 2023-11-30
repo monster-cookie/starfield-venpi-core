@@ -1,4 +1,4 @@
-scriptname VPI_InjectItem_LeveledList extends Quest
+scriptname VPI_Inject_LeveledListItem extends Quest
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
