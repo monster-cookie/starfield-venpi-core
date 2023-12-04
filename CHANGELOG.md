@@ -1,5 +1,8 @@
 # V1.0 Permutations
 
+## V1.0.6
+* New condition form for checking if an NPC is a creature
+
 ## V1.0.5
 * New cloak ability injector for the upcoming split dynamic scaling mods and new NPC resizer
 
