@@ -1,5 +1,8 @@
 # V1.0 Permutations
 
+## V1.0.7
+* New condition forms for checking is an NPC is a critter, human, or robot
+
 ## V1.0.6
 * New condition form for checking if an NPC is a creature
 
