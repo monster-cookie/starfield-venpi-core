@@ -1,5 +1,8 @@
 # V1.0 Permutations
 
+## V1.0.8
+* Added a bunch of leveled item lists for use in Galactic Pawn/Junk and Cora
+
 ## V1.0.7
 * New condition forms for checking is an NPC is a critter, human, or robot
 
