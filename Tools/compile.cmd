@@ -36,11 +36,13 @@ mkdir "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist-BA2-Main\
   exit /b 1
 )
 
-
 @REM ESM is purely binary so need to pull from starfield dir where xedit has to have it 
 @echo "Copying the ESM from MO2 into the Dist folder"
 copy /y "D:\MO2Staging\Starfield\mods\VenpiCore-Experimental\VenpiCore.esm" "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Source\ESM"
 copy /y "D:\MO2Staging\Starfield\mods\VenpiCore-Experimental\VenpiCore.esm" "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Dist"
+
+@REM Use Spriggit to extract record from ESM
+"D:\Program Files\Spriggit\Spriggit.CLI.exe" serialize --InputPath "D:\MO2Staging\Starfield\mods\VenpiCore-Experimental\VenpiCore.esm" --OutputPath "C:\Repositories\Public\Starfield Mods\starfield-venpi-core\Source\ESM-Extracted" --GameRelease Starfield --PackageName Spriggit.Yaml
 
 @REM Create and copy the BA2 Textures Archive to Dist folder
 @REM @echo "Creating the BA2 Textures Archive"

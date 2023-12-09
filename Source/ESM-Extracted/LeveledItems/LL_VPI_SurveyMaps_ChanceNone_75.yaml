@@ -1,0 +1,29 @@
+FormKey: 000822:VenpiCore.esm
+EditorID: LL_VPI_SurveyMaps_ChanceNone_75
+ODTY: 0
+ObjectPlacementDefaults:
+  Unknown1: 2.2E-44
+  Unknown5: 7E-45
+  Unknown6: 1
+  Unknown14: 1
+  Unknown16: 1
+  Unknown17: 0.01
+  Unknown20: 3.4028235E+38
+ChanceNone: 75
+MaxCount: 1
+Flags:
+- 0x8
+- 0x10
+Entries:
+- Level: 1
+  Reference: 104604:Starfield.esm
+  Count: 1
+- Level: 1
+  Reference: 104604:Starfield.esm
+  Count: 1
+- Level: 25
+  Reference: 1045E8:Starfield.esm
+  Count: 1
+Model:
+  File: Items\Magazines\MagazineConstellation1.nif
+  FLLD: 0x01000000

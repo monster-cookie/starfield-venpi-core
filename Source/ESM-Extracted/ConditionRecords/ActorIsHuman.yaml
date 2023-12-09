@@ -1,0 +1,19 @@
+FormKey: 000806:VenpiCore.esm
+EditorID: ActorIsHuman
+Conditions:
+- MutagenObjectType: ConditionFloat
+  Flags:
+  - OR
+  Unknown1: 0x000000
+  Data:
+    MutagenObjectType: GetIsRaceConditionData
+    FirstParameter: 00347D:Starfield.esm
+  ComparisonValue: 1
+- MutagenObjectType: ConditionFloat
+  Flags:
+  - OR
+  Unknown1: 0x000000
+  Data:
+    MutagenObjectType: GetIsRaceConditionData
+    FirstParameter: 2AABCD:Starfield.esm
+  ComparisonValue: 1

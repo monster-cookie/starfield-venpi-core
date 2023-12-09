@@ -1,5 +1,8 @@
 # V1.0 Permutations
 
+## V1.0.9
+* Added leveled lists for ingredients
+
 ## V1.0.8
 * Added a bunch of leveled item lists for use in Galactic Pawn/Junk and Cora
 

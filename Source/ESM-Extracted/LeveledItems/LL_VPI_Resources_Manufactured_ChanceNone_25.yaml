@@ -1,0 +1,96 @@
+FormKey: 000814:VenpiCore.esm
+EditorID: LL_VPI_Resources_Manufactured_ChanceNone_25
+ChanceNone: 25
+MaxCount: 2
+Flags:
+- CalculateFromAllLevelsLessThanOrEqualPlayer
+- CalculateForEachItemInCount
+Entries:
+- Level: 1
+  Reference: 246B65:Starfield.esm
+  Count: 1
+- Level: 1
+  Reference: 246B6A:Starfield.esm
+  Count: 1
+- Level: 1
+  Reference: 246B74:Starfield.esm
+  Count: 1
+  ChanceNone: 0.09803921568627451
+- Level: 1
+  Reference: 246B79:Starfield.esm
+  Count: 1
+  ChanceNone: 0.0392156862745098
+- Level: 10
+  Reference: 246B5F:Starfield.esm
+  Count: 1
+- Level: 10
+  Reference: 246B64:Starfield.esm
+  Count: 1
+  ChanceNone: 0.0392156862745098
+- Level: 10
+  Reference: 246B69:Starfield.esm
+  Count: 1
+- Level: 10
+  Reference: 246B6B:Starfield.esm
+  Count: 1
+  ChanceNone: 0.0392156862745098
+- Level: 10
+  Reference: 246B6E:Starfield.esm
+  Count: 1
+  ChanceNone: 0.0392156862745098
+- Level: 10
+  Reference: 246B6F:Starfield.esm
+  Count: 1
+- Level: 10
+  Reference: 246B73:Starfield.esm
+  Count: 1
+- Level: 25
+  Reference: 246B5C:Starfield.esm
+  Count: 1
+- Level: 25
+  Reference: 246B66:Starfield.esm
+  Count: 1
+- Level: 25
+  Reference: 246B68:Starfield.esm
+  Count: 1
+  ChanceNone: 0.0392156862745098
+- Level: 25
+  Reference: 246B6D:Starfield.esm
+  Count: 1
+  ChanceNone: 0.0392156862745098
+- Level: 25
+  Reference: 246B71:Starfield.esm
+  Count: 1
+  ChanceNone: 0.0392156862745098
+- Level: 25
+  Reference: 246B77:Starfield.esm
+  Count: 1
+  ChanceNone: 0.09803921568627451
+- Level: 50
+  Reference: 203EB4:Starfield.esm
+  Count: 1
+  ChanceNone: 0.09803921568627451
+- Level: 50
+  Reference: 246B67:Starfield.esm
+  Count: 1
+  ChanceNone: 0.09803921568627451
+- Level: 50
+  Reference: 246B6C:Starfield.esm
+  Count: 1
+  ChanceNone: 0.0392156862745098
+- Level: 50
+  Reference: 246B70:Starfield.esm
+  Count: 1
+  ChanceNone: 0.09803921568627451
+- Level: 50
+  Reference: 246B75:Starfield.esm
+  Count: 1
+  ChanceNone: 0.09803921568627451
+- Level: 50
+  Reference: 246B7B:Starfield.esm
+  Count: 1
+  ChanceNone: 0.19607843137254902
+- Level: 75
+  Reference: 20A02F:Starfield.esm
+  Count: 1
+  ChanceNone: 0.19607843137254902

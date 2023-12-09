@@ -1,0 +1,14 @@
+FormKey: 00081F:VenpiCore.esm
+EditorID: LL_VPI_TreasureMaps_All_ChanceNone_25
+ChanceNone: 25
+MaxCount: 1
+Flags:
+- CalculateFromAllLevelsLessThanOrEqualPlayer
+- CalculateForEachItemInCount
+Entries:
+- Level: 1
+  Reference: 00081A:VenpiCore.esm
+  Count: 1
+- Level: 1
+  Reference: 00081B:VenpiCore.esm
+  Count: 1

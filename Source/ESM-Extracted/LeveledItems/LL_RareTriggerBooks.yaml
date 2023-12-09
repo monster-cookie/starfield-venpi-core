@@ -1,0 +1,38 @@
+FormKey: 000802:VenpiCore.esm
+EditorID: LL_RareTriggerBooks
+ChanceNone: 90
+MaxCount: 1
+Flags:
+- CalculateFromAllLevelsLessThanOrEqualPlayer
+- CalculateForEachItemInCount
+Entries:
+- Level: 1
+  Reference: 026EAF:Starfield.esm
+  Count: 1
+- Level: 1
+  Reference: 028F10:Starfield.esm
+  Count: 1
+- Level: 1
+  Reference: 028F11:Starfield.esm
+  Count: 1
+- Level: 1
+  Reference: 18641E:Starfield.esm
+  Count: 1
+- Level: 25
+  Reference: 009A37:Starfield.esm
+  Count: 1
+- Level: 25
+  Reference: 009A3D:Starfield.esm
+  Count: 1
+- Level: 25
+  Reference: 028F12:Starfield.esm
+  Count: 1
+- Level: 50
+  Reference: 026EA8:Starfield.esm
+  Count: 1
+- Level: 50
+  Reference: 026EAE:Starfield.esm
+  Count: 1
+- Level: 75
+  Reference: 009A33:Starfield.esm
+  Count: 1
