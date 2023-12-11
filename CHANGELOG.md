@@ -1,5 +1,9 @@
 # V1.0 Permutations
 
+## V1.0.10
+* Using user log files instead of the papyrus logs. Thank you SFCP team. 
+* This mod will break all my mods I have updates prepped and tested but will probably take an hour to upload them all. So don't update this until all the ones you use are uploaded.
+
 ## V1.0.9
 * Added leveled lists for ingredients
 

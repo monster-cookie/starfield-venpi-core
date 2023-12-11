@@ -12,16 +12,20 @@ ScriptName VPI_Debug
 ;; ****************************************************************************
 ;; Debug Message Handler
 ;;
-Function DebugMessage(string moduleName, string functionName, string message, int level, int debugModeEnabled) Global
+Function DebugMessage(string modName, string moduleName, string functionName, string message, int level, int debugModeEnabled) Global
   If (debugModeEnabled == 0)
     return
   EndIf
 
+  if Debug.OpenUserLog(modName)
+    Debug.TraceUser(modName, "\n\n[[--------------------------------------------------------------------------------]]\n" + modName + " LOG\n[[--------------------------------------------------------------------------------]]\n\n", 0)
+  endif
+
   If (level == 1)
-    Debug.Trace("VPI_WARN " + moduleName + "(" + functionName + "): " + message, level)
+    Debug.TraceUser(modName, "VPI_WARN " + moduleName + "(" + functionName + "): " + message, level)
   ElseIf (level == 2)
-    Debug.Trace("VPI_ERROR " + moduleName + "(" + functionName + "): " + message, level)
+    Debug.TraceUser(modName, "VPI_ERROR " + moduleName + "(" + functionName + "): " + message, level)
   Else
-    Debug.Trace("VPI_DEBUG " + moduleName + "(" + functionName + "): " + message, level)
+    Debug.TraceUser(modName, "VPI_DEBUG " + moduleName + "(" + functionName + "): " + message, level)
   EndIf
 EndFunction
