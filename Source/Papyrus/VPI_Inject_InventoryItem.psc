@@ -1,4 +1,4 @@
-scriptname VPI_Inject_InventoryItem extends Quest
+ScriptName VPI_Inject_InventoryItem extends Quest
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;

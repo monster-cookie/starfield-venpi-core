@@ -1,4 +1,4 @@
-scriptname VPI_Inject_SpellToPlayer extends Quest
+ScriptName VPI_Inject_SpellToPlayer extends Quest
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;

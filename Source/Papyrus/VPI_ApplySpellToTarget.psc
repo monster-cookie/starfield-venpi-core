@@ -1,4 +1,4 @@
-Scriptname VPI_ApplySpellToTarget extends ActiveMagicEffect  
+ScriptName VPI_ApplySpellToTarget extends ActiveMagicEffect  
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
