@@ -5,7 +5,7 @@ ScriptName VPI_Inject_InventoryItem extends Quest
 ;;; Global Variables
 ;;;
 GlobalVariable Property Venpi_DebugEnabled Auto Const Mandatory
-String Property Venpi_ModName Auto Const Mandatory
+String Property Venpi_ModName="VenpiCore" Auto Const Mandatory
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;

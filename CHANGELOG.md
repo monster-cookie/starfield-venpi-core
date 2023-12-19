@@ -1,5 +1,10 @@
 # V1.0 Permutations
 
+## V1.0.11
+* Added default for Venpi_ModName to prevent blank named log files
+* Added new shared inventory functions
+* Created a shared object manger for shared global objects across mods. Uses an init quest and manager script. 
+
 ## V1.0.10
 * Using user log files instead of the papyrus logs. Thank you SFCP team. 
 * This mod will break all my mods I have updates prepped and tested but will probably take an hour to upload them all. So don't update this until all the ones you use are uploaded.

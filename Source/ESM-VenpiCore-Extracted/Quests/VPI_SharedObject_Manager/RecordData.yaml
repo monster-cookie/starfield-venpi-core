@@ -1,0 +1,16 @@
+FormKey: 000828:VenpiCore.esm
+EditorID: VPI_SharedObject_Manager
+VirtualMachineAdapter:
+  Scripts:
+  - Name: VPI_SharedObjectManager
+  Script:
+    Name: ''
+Name:
+  TargetLanguage: English
+  Value: Venpi Core - Shared Object Manager
+Data:
+  Flags:
+  - StartGameEnabled
+  - StartsEnabled
+  Unused: 0x000000
+UnusedConditions: []
