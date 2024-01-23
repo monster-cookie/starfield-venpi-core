@@ -1,5 +1,8 @@
 # Venpi Core Utilities and Shared Objects
 
+## Version 1.0.13
+* Added shared enum class for difficulty/preset mode for Scale The World and Resize The World.
+
 ## Version 1.0.12
 * Added utility command to enable use of smartdoc via console hotkey. For the hotkey run: CGF "VPI_SmartdocUtilities.Use"
 
