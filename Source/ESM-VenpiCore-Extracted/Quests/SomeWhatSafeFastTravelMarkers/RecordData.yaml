@@ -1,0 +1,67 @@
+FormKey: 00082D:VenpiCore.esm
+EditorID: SomeWhatSafeFastTravelMarkers
+Name:
+  TargetLanguage: English
+  Value: SomeWhatSafeFastTravelMarkers
+Data:
+  Flags:
+  - StartGameEnabled
+  - AllowRepeatedStages
+  - StartsEnabled
+  Unused: 0x000000
+UnusedConditions: []
+Aliases:
+- MutagenObjectType: QuestCollectionAlias
+  Collection:
+  - ID: 0
+    MaxInitialFillCount: 255
+    ALAM: 0
+    ReferenceAlias:
+      Name: MapMarkersFound
+      Flags: []
+      ALFG: 0
+      Conditions:
+      - MutagenObjectType: ConditionFloat
+        Unknown1: 0x000000
+        Data:
+          MutagenObjectType: GetIsIDConditionData
+          FirstParameter: 000010:Starfield.esm
+        ComparisonValue: 1
+      - MutagenObjectType: ConditionFloat
+        Unknown1: 0x030000
+        Unknown2: 17624
+        Data:
+          MutagenObjectType: LocationHasRefTypeConditionData
+          FirstParameter: 02271F:Starfield.esm
+        ComparisonValue: 1
+      - MutagenObjectType: ConditionFloat
+        Unknown1: 0x000000
+        Data:
+          MutagenObjectType: LocationOrParentHasKeywordConditionData
+          FirstParameter: 062F2F:Starfield.esm
+      - MutagenObjectType: ConditionFloat
+        Unknown1: 0x000000
+        Data:
+          MutagenObjectType: LocationOrParentHasKeywordConditionData
+          FirstParameter: 022611:Starfield.esm
+      - MutagenObjectType: ConditionFloat
+        Unknown1: 0x000000
+        Data:
+          MutagenObjectType: LocationOrParentHasKeywordConditionData
+          FirstParameter: 2253D1:Starfield.esm
+      - MutagenObjectType: ConditionFloat
+        Unknown1: 0x000000
+        Data:
+          MutagenObjectType: LocationOrParentHasKeywordConditionData
+          FirstParameter: 01674D:Starfield.esm
+      - MutagenObjectType: ConditionFloat
+        Unknown1: 0x000000
+        Data:
+          MutagenObjectType: LocationOrParentHasKeywordConditionData
+          FirstParameter: 0141F2:Starfield.esm
+      - MutagenObjectType: ConditionFloat
+        Unknown1: 0x000000
+        Data:
+          MutagenObjectType: IsInListConditionData
+          FirstParameter: 00082C:VenpiCore.esm
+      VoiceTypes: Null

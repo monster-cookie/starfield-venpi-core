@@ -1,0 +1,9 @@
+FormKey: 00082B:VenpiCore.esm
+EditorID: IsNewGamePlus
+Conditions:
+- MutagenObjectType: ConditionFloat
+  CompareOperator: GreaterThan
+  Unknown1: 0x000000
+  Data:
+    MutagenObjectType: GetValueConditionData
+    FirstParameter: 2200873

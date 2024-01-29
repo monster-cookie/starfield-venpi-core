@@ -1,0 +1,19 @@
+FormKey: 000829:VenpiCore.esm
+EditorID: PlayerAwareOfStarborn
+Conditions:
+- MutagenObjectType: ConditionFloat
+  CompareOperator: GreaterThan
+  Flags:
+  - OR
+  Unknown1: 0x000000
+  Data:
+    MutagenObjectType: GetValueConditionData
+    FirstParameter: 2200873
+- MutagenObjectType: ConditionFloat
+  Flags:
+  - OR
+  Unknown1: 0x000000
+  Data:
+    MutagenObjectType: GetQuestCompletedConditionData
+    FirstParameter: 2A8001:Starfield.esm
+  ComparisonValue: 1

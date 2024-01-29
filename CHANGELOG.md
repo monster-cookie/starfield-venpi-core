@@ -1,4 +1,12 @@
-# Venpi Core Utilities and Shared Objects
+# Venworks Core Utilities and Shared Objects
+
+## Version 1.0.15
+* Fast Travel/MoveTo Utility Functions with error handling. Thank you SKK50 for the feedback and help with it. 
+* Added overridable form list to exclude map markers from safe fast travel targets. The default values into it are know to cause infinite load screens or dump you outside valid space.
+* Added a quest and collection list to get a somewhat safe list of fast travel targets
+
+## Version 1.0.14
+* New condition forms for detecting if the player is aware of starborn and NG+ mode. 
 
 ## Version 1.0.13
 * Added shared enum class for difficulty/preset mode for Scale The World and Resize The World.
