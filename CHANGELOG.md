@@ -1,5 +1,8 @@
 # Venworks Core Utilities and Shared Objects
 
+## Version 1.0.16
+* Excluded the MQ301 locations (Moon and Nasa) from usage they are not properly tagged so were showing up. 
+
 ## Version 1.0.15
 * Fast Travel/MoveTo Utility Functions with error handling. Thank you SKK50 for the feedback and help with it. 
 * Added overridable form list to exclude map markers from safe fast travel targets. The default values into it are know to cause infinite load screens or dump you outside valid space.
