@@ -1,5 +1,8 @@
 # Venworks Core Utilities and Shared Objects
 
+## Version 1.0.17
+* Excluded anything from the whole nasa launch tower cell from the safe fast travel list. Some how still getting sent there when all listed map markers and xMarkerHeading referers are excluded. 
+
 ## Version 1.0.16
 * Excluded the MQ301 locations (Moon and Nasa) from usage they are not properly tagged so were showing up. 
 

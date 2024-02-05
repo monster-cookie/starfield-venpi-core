@@ -62,6 +62,11 @@ Aliases:
       - MutagenObjectType: ConditionFloat
         Unknown1: 0x000000
         Data:
+          MutagenObjectType: GetInCellConditionData
+          FirstParameter: 06CEBD:Starfield.esm
+      - MutagenObjectType: ConditionFloat
+        Unknown1: 0x000000
+        Data:
           MutagenObjectType: IsInListConditionData
           FirstParameter: 00082C:VenpiCore.esm
       VoiceTypes: Null
