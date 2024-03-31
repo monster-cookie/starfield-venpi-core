@@ -1,0 +1,8 @@
+FormKey: 000830:VenpiCore.esm
+EditorID: VPI_OnPlayerLevel
+Parent: 16556F:Starfield.esm
+PreviousSibling: 028FBE:Starfield.esm
+QuestFlags:
+- SharesEvent
+Quests:
+- Quest: 00082E:VenpiCore.esm

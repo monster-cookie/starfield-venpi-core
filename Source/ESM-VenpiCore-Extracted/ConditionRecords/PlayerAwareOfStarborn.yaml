@@ -2,13 +2,14 @@ FormKey: 000829:VenpiCore.esm
 EditorID: PlayerAwareOfStarborn
 Conditions:
 - MutagenObjectType: ConditionFloat
-  CompareOperator: GreaterThan
+  CompareOperator: GreaterThanOrEqualTo
   Flags:
   - OR
   Unknown1: 0x000000
   Data:
     MutagenObjectType: GetValueConditionData
     FirstParameter: 2200873
+  ComparisonValue: 1
 - MutagenObjectType: ConditionFloat
   Flags:
   - OR

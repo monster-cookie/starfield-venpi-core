@@ -23,12 +23,43 @@ Struct DifficultyPresets
   Int Apocalypse=5
 EndStruct
 
+Struct Aggression
+  Int Unaggressive=0
+  Int Aggressive=1
+  Int VeryAggressive=2
+  Int Frenzied=3
+EndStruct
+
+Struct Confidence
+  Int Cowardly=0
+  Int Cautious=1
+  Int Average=2
+  Int Brave=3
+  Int Foolhardy=4
+EndStruct
+
+Struct Assists
+  Int Nobody=0
+  Int Allies=1
+  Int FriendsAllies=2
+EndStruct
+
+Struct Suspicious
+  Int Neutral=0
+  Int HuntingTarget=1
+  Int FoundTarget=2
+EndStruct
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;; Properties
 ;;;
 InventoryItemTypes Property EnumInventoryItemType Auto
 DifficultyPresets Property EnumDifficultyPresets Auto
+Aggression Property EnumAggression Auto
+Confidence Property EnumConfidence Auto
+Assists Property EnumAssists Auto
+Suspicious Property EnumSuspicious Auto
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
@@ -37,6 +68,10 @@ DifficultyPresets Property EnumDifficultyPresets Auto
 Event OnInit()
   EnumInventoryItemType = new InventoryItemTypes
   EnumDifficultyPresets = new DifficultyPresets
+  EnumAggression = new Aggression
+  EnumConfidence = new Confidence
+  EnumAssists = new Assists
+  EnumSuspicious = new Suspicious
 EndEvent
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -52,7 +87,7 @@ InventoryItemTypes Function GetEnumInventoryItemType() Global
     EndIf
   EndIf
 
-  Return  none ; return none
+  Return None
 EndFunction
 
 DifficultyPresets Function GetEnumDifficultyPresets() Global
@@ -64,5 +99,53 @@ DifficultyPresets Function GetEnumDifficultyPresets() Global
     EndIf
   EndIf
 
-  Return  none ; return none
+  Return None
+EndFunction
+
+Aggression Function GetEnumAggression() Global
+  Quest quest = Game.GetFormFromFile(0x71000828, "VenpiCore.esm") as Quest
+  If (quest)
+    VPI_SharedObjectManager script = quest as VPI_SharedObjectManager
+    If (script)
+      return script.EnumAggression
+    EndIf
+  EndIf
+
+  Return None
+EndFunction
+
+Confidence Function GetEnumConfidence() Global
+  Quest quest = Game.GetFormFromFile(0x71000828, "VenpiCore.esm") as Quest
+  If (quest)
+    VPI_SharedObjectManager script = quest as VPI_SharedObjectManager
+    If (script)
+      return script.EnumConfidence
+    EndIf
+  EndIf
+
+  Return None
+EndFunction
+
+Assists Function GetEnumAssists() Global
+  Quest quest = Game.GetFormFromFile(0x71000828, "VenpiCore.esm") as Quest
+  If (quest)
+    VPI_SharedObjectManager script = quest as VPI_SharedObjectManager
+    If (script)
+      return script.EnumAssists
+    EndIf
+  EndIf
+
+  Return None
+EndFunction
+
+Suspicious Function GetEnumSuspicious() Global
+  Quest quest = Game.GetFormFromFile(0x71000828, "VenpiCore.esm") as Quest
+  If (quest)
+    VPI_SharedObjectManager script = quest as VPI_SharedObjectManager
+    If (script)
+      return script.EnumSuspicious
+    EndIf
+  EndIf
+
+  Return None
 EndFunction

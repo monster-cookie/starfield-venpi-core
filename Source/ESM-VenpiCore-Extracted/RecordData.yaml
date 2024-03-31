@@ -1,14 +1,14 @@
 SpriggitSource:
   PackageName: Spriggit.Yaml.Starfield
-  Version: 0.16.0
+  Version: 0.18.0
 ModKey: VenpiCore.esm
 GameRelease: Starfield
 ModHeader:
   Flags:
   - Master
   Stats:
-    NumRecords: 47
-    NextFormID: 2094
+    NumRecords: 52
+    NextFormID: 2097
   Author: ''
   MasterReferences:
   - Master: Starfield.esm

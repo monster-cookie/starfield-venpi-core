@@ -1,0 +1,12 @@
+FormKey: 00082F:VenpiCore.esm
+EditorID: PlayerLevel
+Name:
+  TargetLanguage: English
+  Value: Player Level
+Abbreviation:
+  TargetLanguage: English
+  Value: LVL
+DefaultValue: 1
+Flags:
+- GodModeImmune
+Type: IntValue

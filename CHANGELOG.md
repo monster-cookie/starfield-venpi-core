@@ -1,5 +1,11 @@
 # Venworks Core Utilities and Shared Objects
 
+## Version 1.0.18
+* Fix for the Starborn Known condition function post 1.10.31.0
+* Added NPC dump command: CGF "VPI_NPCUtilities.DumpNPCInfo" \<ReferenceAlias:DynamicID\>
+* Added Player Dump Command: CGF "VPI_NPCUtilities.DumpPlayerInfo"
+* Added Enums for AI Data Settings
+
 ## Version 1.0.17
 * Excluded anything from the whole nasa launch tower cell from the safe fast travel list. Some how still getting sent there when all listed map markers and xMarkerHeading referers are excluded. 
 

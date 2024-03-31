@@ -1,0 +1,22 @@
+FormKey: 00082E:VenpiCore.esm
+EditorID: VPI_PlayerLevelHandler
+VirtualMachineAdapter:
+  Scripts:
+  - Name: VPI_PlayerLevelHandlerScript
+    Properties:
+    - MutagenObjectType: ScriptObjectProperty
+      Name: Venpi_DebugEnabled
+      Object: 000800:VenpiCore.esm
+    - MutagenObjectType: ScriptObjectProperty
+      Name: PlayerLevel
+      Object: 00082F:VenpiCore.esm
+  Script:
+    Name: ''
+Data:
+  Flags:
+  - AllowRepeatedStages
+  Unused: 0x000000
+Event: LEVL
+UnusedConditions: []
+Stages:
+- {}
