@@ -49,23 +49,19 @@ Function DumpNPCInfo(ObjectReference npcRef) Global
   ; message += "Crime Faction: " + realNPC.GetCrimeFaction() + "\n" ;; Need a way to represent as a string or Form ID
   ; message += "Group Faction: " + realNPC.GetGroupFaction() + "\n" ;; Need a way to represent as a string or Form ID
   message += "Combat Role: " + GetCombatRole(npcRef) + "\n"
+  ; message += "Combat Style: " + GetCombatStyle(npcRef) + "\n"
   message += "\n\n"
   message += "NPC Stats:\n"
+  message += "Scaling Level Selector: " + GetAVScalingTier(npcRef) + "\n"
   message += "Encounter Level: " + GetEncounterLevel(npcRef) + "\n"
   message += "Health: " + GetAVHealth(npcRef) + "\n"
   message += "Power: " + GetAVStarPower(npcRef) + "\n"
-  message += "Experience: " + GetAVExperience(npcRef) + "\n"
   message += "Speed: " + GetAVSpeed(npcRef) + "\n"
   message += "VEOH Bounty: " + GetBountyType(npcRef) + "\n"
   message += "\n\n"
   message += "NPC Resistances:\n"
-  message += "Physical Damage Resist: " + GetAVDamageResist(npcRef) + "\n"
-  message += "Energy Damage Resist: " + GetAVEnergyResist(npcRef) + "\n"
-  message += "EM Damage Resist: " + GetAVElectromagneticDamageResist(npcRef) + "\n"
-  message += "Env Airborne Resist: " + GetAVEnvAirborneResist(npcRef) + "\n"
-  message += "Env Corrosive Resist: " + GetAVEnvCorrosiveResist(npcRef) + "\n"
-  message += "Env Radiation Resist: " + GetAVEnvRadiationResist(npcRef) + "\n"
-  message += "Env Thermal Resist: " + GetAVEnvThermalResist(npcRef) + "\n"
+  message += "Damage Resists (Phy|Eng|EM): " + GetAVDamageResist(npcRef) + " | " + GetAVEnergyResist(npcRef) + " | " + GetAVElectromagneticDamageResist(npcRef) + "\n"
+  message += "Env Resists (Air|Corro|Rad|Therm): " + GetAVEnvAirborneResist(npcRef) + " | " + GetAVEnvCorrosiveResist(npcRef) + " | " + GetAVEnvRadiationResist(npcRef) + " | "+ GetAVEnvThermalResist(npcRef) + "\n"
   message += "\n\n"
   message += "NPC AI Data:\n"
   message += "Aggression: " + GetAVAggression(npcRef) + "\n"
@@ -104,6 +100,7 @@ String Function GetCombatRole(ObjectReference actorRef) Global
   Keyword CombatRole_Boss_Keyword = Game.GetFormFromFile(0x00000895, "VenworksFactionOverhaul.esm") as Keyword
   Keyword CombatRole_Charger_Keyword = Game.GetFormFromFile(0x0006D976, "Starfield.esm") as Keyword
   Keyword CombatRole_Heavy_Keyword = Game.GetFormFromFile(0x00000892, "VenworksFactionOverhaul.esm") as Keyword
+  Keyword CombatRole_Officer_Keyword = Game.GetFormFromFile(0x00000A3D, "VenworksFactionOverhaul.esm") as Keyword
   Keyword CombatRole_Recruit_Keyword = Game.GetFormFromFile(0x00000898, "VenworksFactionOverhaul.esm") as Keyword
   Keyword CombatRole_Sniper_Keyword = Game.GetFormFromFile(0x00000893, "VenworksFactionOverhaul.esm") as Keyword
   Keyword CombatRole_Support_Keyword = Game.GetFormFromFile(0x00000894, "VenworksFactionOverhaul.esm") as Keyword
@@ -115,6 +112,8 @@ String Function GetCombatRole(ObjectReference actorRef) Global
     Return "Charger"
   ElseIf (actorRef.HasKeyword(CombatRole_Heavy_Keyword))
     Return "Heavy"
+  ElseIf (actorRef.HasKeyword(CombatRole_Officer_Keyword))
+    Return "Officer"
   ElseIf (actorRef.HasKeyword(CombatRole_Recruit_Keyword))
     Return "Recruit"
   ElseIf (actorRef.HasKeyword(CombatRole_Sniper_Keyword))
@@ -270,3 +269,65 @@ String Function GetBountyType(ObjectReference actorRef) Global
     Return "None"
   EndIf
 EndFunction
+
+Int Function GetAVScalingTier(ObjectReference actorRef) Global
+  Return actorRef.GetValueInt(Game.GetFormFromFile(0x00000A28, "VenworksFactionOverhaul.esm") as ActorValue)
+EndFunction
+
+;; Cannot be done currently they only let you set combat style papyrus side not query it. 
+; String Function GetCombatStyle(ObjectReference actorRef) Global
+;   CombatStyle csCrimsonFleet_Assault = Game.GetFormFromFile(0x002C5638, "Starfield.esm") as CombatStyle
+;   CombatStyle csCrimsonFleet_Charger = Game.GetFormFromFile(0x002C5637, "Starfield.esm") as CombatStyle
+;   CombatStyle csCrimsonFleet_Heavy = Game.GetFormFromFile(0x002C5636, "Starfield.esm") as CombatStyle
+;   CombatStyle csCrimsonFleet_LowLevel = Game.GetFormFromFile(0x00178CA4, "Starfield.esm") as CombatStyle
+;   ;; Spacer Officer Goes here
+;   CombatStyle csCrimsonFleet_Recruit = Game.GetFormFromFile(0x002C5635, "Starfield.esm") as CombatStyle
+;   CombatStyle csCrimsonFleet_Sniper = Game.GetFormFromFile(0x002C5634, "Starfield.esm") as CombatStyle
+;   ;; Spacer Support Goes here
+;   CombatStyle csEcliptic_Assault = Game.GetFormFromFile(0x002C5632, "Starfield.esm") as CombatStyle
+;   CombatStyle csEcliptic_Charger = Game.GetFormFromFile(0x002C5631, "Starfield.esm") as CombatStyle
+;   CombatStyle csEcliptic_Heavy = Game.GetFormFromFile(0x002C5630, "Starfield.esm") as CombatStyle
+;   CombatStyle csEcliptic_Officer = Game.GetFormFromFile(0x0026FDB1, "Starfield.esm") as CombatStyle
+;   CombatStyle csEcliptic_Sniper = Game.GetFormFromFile(0x002C562F, "Starfield.esm") as CombatStyle
+;   CombatStyle csEcliptic_Support = Game.GetFormFromFile(0x002C562E, "Starfield.esm") as CombatStyle
+;   CombatStyle csSpacer_Assault = Game.GetFormFromFile(0x002C562D, "Starfield.esm") as CombatStyle
+;   CombatStyle csSpacer_Charger = Game.GetFormFromFile(0x002C562C, "Starfield.esm") as CombatStyle
+;   CombatStyle csSpacer_Heavy = Game.GetFormFromFile(0x000D2143, "Starfield.esm") as CombatStyle
+;   CombatStyle csSpacer_Recruit = Game.GetFormFromFile(0x002C562B, "Starfield.esm") as CombatStyle
+;   CombatStyle csSpacer_Sniper = Game.GetFormFromFile(0x000D2144, "Starfield.esm") as CombatStyle
+;   CombatStyle csStarborn_Assault = Game.GetFormFromFile(0x00270265, "Starfield.esm") as CombatStyle
+;   CombatStyle csStarborn_Charger = Game.GetFormFromFile(0x001AE521, "Starfield.esm") as CombatStyle
+;   CombatStyle csStarborn_Heavy = Game.GetFormFromFile(0x00334536, "Starfield.esm") as CombatStyle
+;   CombatStyle csStarborn_Sniper = Game.GetFormFromFile(0x0012B471, "Starfield.esm") as CombatStyle
+;   CombatStyle csSyndicate_Assault = Game.GetFormFromFile(0x002C563B, "Starfield.esm") as CombatStyle
+;   CombatStyle csSyndicate_Charger = Game.GetFormFromFile(0x002C563A, "Starfield.esm") as CombatStyle
+;   CombatStyle csSyndicate_Recruit = Game.GetFormFromFile(0x002C5639, "Starfield.esm") as CombatStyle
+;   CombatStyle csTheFirst_Assault = Game.GetFormFromFile(0x002C5649, "Starfield.esm") as CombatStyle
+;   CombatStyle csTheFirst_Charger = Game.GetFormFromFile(0x002C5648, "Starfield.esm") as CombatStyle
+;   CombatStyle csTheFirst_Heavy = Game.GetFormFromFile(0x002C5647, "Starfield.esm") as CombatStyle
+;   CombatStyle csTheFirst_Officer = Game.GetFormFromFile(0x002C5646, "Starfield.esm") as CombatStyle
+;   CombatStyle csTheFirst_Recruit = Game.GetFormFromFile(0x002C5645, "Starfield.esm") as CombatStyle
+;   CombatStyle csTheFirst_Sniper = Game.GetFormFromFile(0x002C5644, "Starfield.esm") as CombatStyle
+;   CombatStyle csTheFirst_Support = Game.GetFormFromFile(0x002C5643, "Starfield.esm") as CombatStyle
+;   CombatStyle csVaruun_Assault = Game.GetFormFromFile(0x0026FDB6, "Starfield.esm") as CombatStyle
+;   CombatStyle csVaruun_Charger = Game.GetFormFromFile(0x002C562A, "Starfield.esm") as CombatStyle
+;   If (actorRef.HasKeyword(CombatRole_Assault_Keyword))
+;     Return "Assault"
+;   ElseIf (actorRef.HasKeyword(CombatRole_Boss_Keyword))
+;     Return "Boss"
+;   ElseIf (actorRef.HasKeyword(CombatRole_Charger_Keyword))
+;     Return "Charger"
+;   ElseIf (actorRef.HasKeyword(CombatRole_Heavy_Keyword))
+;     Return "Heavy"
+;   ElseIf (actorRef.HasKeyword(CombatRole_Officer_Keyword))
+;     Return "Officer"
+;   ElseIf (actorRef.HasKeyword(CombatRole_Recruit_Keyword))
+;     Return "Recruit"
+;   ElseIf (actorRef.HasKeyword(CombatRole_Sniper_Keyword))
+;     Return "Sniper"
+;   ElseIf (actorRef.HasKeyword(CombatRole_Support_Keyword))
+;     Return "Support"
+;   Else
+;     Return "None"
+;   EndIf
+; EndFunction
