@@ -18,7 +18,7 @@ REM Archive Dist Dir
 
 REM Upload the zip as a release to GitHub
 @echo Creating GitHub release for version %1
-gh release create "%1" "C:\Users\degre\Downloads\VenworksFactionOverhaul.zip" --verify-tag --latest --title "Version %1" -F "../CHANGELOG.md"
+gh release create "%1" "C:\Users\degre\Downloads\VenpiCore.zip" --verify-tag --latest --title "Version %1" -F "../CHANGELOG.md"
 goto end
 
 :error_no_version
