@@ -18,7 +18,8 @@ REM Archive Dist Dir
 
 REM Upload the zip as a release to GitHub
 @echo Creating GitHub release for version %1
-gh release create "%1" "C:\Users\degre\Downloads\VenpiCore.zip" --verify-tag --latest --title "Version %1" -F "../CHANGELOG.md"
+gh release create "%1" --verify-tag --latest --title "Version %1" -F "../CHANGELOG.md"
+gh release upload "%1" --clobber "C:\Users\degre\Downloads\VenpiCore.zip"
 goto end
 
 :error_no_version

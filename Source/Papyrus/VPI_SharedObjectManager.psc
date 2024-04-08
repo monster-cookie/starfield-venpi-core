@@ -50,6 +50,18 @@ Struct Suspicious
   Int FoundTarget=2
 EndStruct
 
+Struct FactionClasses
+  Int Generic=0
+  Int Assault=1
+  Int Boss=2
+  Int Charger=3
+  Int Heavy=4
+  Int Officer=5
+  Int Recruit=6
+  Int Sniper=7
+  Int Support=8
+EndStruct
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;; Properties
@@ -60,6 +72,7 @@ Aggression Property EnumAggression Auto
 Confidence Property EnumConfidence Auto
 Assists Property EnumAssists Auto
 Suspicious Property EnumSuspicious Auto
+FactionClasses Property EnumFactionClasses Auto
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
@@ -72,6 +85,7 @@ Event OnInit()
   EnumConfidence = new Confidence
   EnumAssists = new Assists
   EnumSuspicious = new Suspicious
+  EnumFactionClasses = new FactionClasses
 EndEvent
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -144,6 +158,18 @@ Suspicious Function GetEnumSuspicious() Global
     VPI_SharedObjectManager script = quest as VPI_SharedObjectManager
     If (script)
       return script.EnumSuspicious
+    EndIf
+  EndIf
+
+  Return None
+EndFunction
+
+FactionClasses Function GetEnumFactionClasses() Global
+  Quest quest = Game.GetFormFromFile(0x71000828, "VenpiCore.esm") as Quest
+  If (quest)
+    VPI_SharedObjectManager script = quest as VPI_SharedObjectManager
+    If (script)
+      return script.EnumFactionClasses
     EndIf
   EndIf
 
