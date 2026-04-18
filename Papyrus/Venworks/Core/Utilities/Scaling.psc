@@ -1,8 +1,6 @@
-ScriptName VPI_ScalingUtilities
+ScriptName Venworks:Core:Utilities:Scaling Extends ScriptObject hidden
 
-;;
-;; MAJOR NOTE: ALL FUNCTIONS MUST BE GLOBAL WITHOUT CREATION KIT
-;;
+Import Venworks:Core:Utilities:Game
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
@@ -12,7 +10,7 @@ ScriptName VPI_ScalingUtilities
 ;; ****************************************************************************
 ;; Get the bracket that applies to the player's current level
 ;;
-Int Function GetBracketForPlayerLevel(int playerLevel) Global
+Int Function GetBracketForPlayerLevel(int playerLevel)
   If (1 <= playerLevel && playerLevel <= 25)
     return 1
   ElseIf (26 <= playerLevel && playerLevel <= 50)
@@ -39,31 +37,31 @@ EndFunction
 ;; ****************************************************************************
 ;; Get, scale, and update a float based game setting 
 ;;
-Function ScaleFormSettingFloat(String formID, Float defaultValue, Float scaleFactor) Global
+Function ScaleFormSettingFloat(String formID, Float defaultValue, Float scaleFactor)
   Float scaledValue = defaultValue * scaleFactor
-  VPI_GameUtilities.SetFormSettingFloat(formID, scaledValue)
+  SetFormSettingFloat(formID, scaledValue)
 EndFunction
 
 ;; ****************************************************************************
 ;; Get, scale, and update a float based game setting 
 ;;
-Function ScaleFormSettingInt(String formID, Int defaultValue, Int scaleFactor) Global
+Function ScaleFormSettingInt(String formID, Int defaultValue, Int scaleFactor)
   Int scaledValue = defaultValue * scaleFactor
-  VPI_GameUtilities.SetFormSettingInt(formID, scaledValue)
+  SetFormSettingInt(formID, scaledValue)
 EndFunction
 
 ;; ****************************************************************************
 ;; Get, scale, and update a float based game setting 
 ;;
-Function ScaleGameSettingFloat(String gameSetting, Float defaultValue, Float scaleFactor) Global
+Function ScaleGameSettingFloat(String gameSetting, Float defaultValue, Float scaleFactor)
   Float scaledValue = defaultValue * scaleFactor
-  VPI_GameUtilities.SetGameSettingFloat(gameSetting, scaledValue)
+  SetGameSettingFloat(gameSetting, scaledValue)
 EndFunction
 
 ;; ****************************************************************************
 ;; Get, scale, and update a float based game setting 
 ;;
-Function ScaleGameSettingInt(String gameSetting, Int defaultValue, Float scaleFactor) Global
+Function ScaleGameSettingInt(String gameSetting, Int defaultValue, Float scaleFactor)
   Int scaledValue = (defaultValue * scaleFactor) as Int
-  VPI_GameUtilities.SetGameSettingInt(gameSetting, scaledValue)
+  SetGameSettingInt(gameSetting, scaledValue)
 EndFunction

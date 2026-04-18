@@ -1,11 +1,13 @@
-ScriptName VPI_ApplySpellToTarget extends ActiveMagicEffect  
+ScriptName Venworks:Core:ApplySpellToTarget extends ActiveMagicEffect  
+
+Import Venworks:Core:Logging
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;; Global Variables
 ;;;
-GlobalVariable Property Venpi_DebugEnabled Auto Const Mandatory
-String Property Venpi_ModName="VenpiCore" Auto Const Mandatory
+GlobalVariable Property Venworks_DebugEnabled Auto Const Mandatory
+String Property Venworks_ModName="VenworksCore" Auto Const Mandatory
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
@@ -18,7 +20,8 @@ Spell Property AbilityToApply Auto Const Mandatory
 ;;; Events
 ;;;
 Event OnEffectStart(ObjectReference akTarget, Actor akCaster, MagicEffect akBaseEffect, Float afMagnitude, Float afDuration)
+  LogSeverity severityTable = new LogSeverity
   Actor target = akTarget.GetSelfAsActor()
 	target.AddSpell(AbilityToApply, false)
-  VPI_Debug.DebugMessage(Venpi_ModName, "VPI_ApplySpellToTarget", "OnEffectStart", "Added ability with form ID " + AbilityToApply + " to target with form ID " + target + ".", 0, Venpi_DebugEnabled.GetValueInt())
+  LogUser(modName=Venworks_ModName, moduleName="Venworks:Core:ApplySpellToTarget", functionName="OnEffectStart", logMessage="Added ability with form ID " + AbilityToApply + " to target with form ID " + target + ".", severity=severityTable.Info)
 EndEvent

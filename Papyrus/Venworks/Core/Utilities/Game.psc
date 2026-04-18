@@ -1,8 +1,4 @@
-ScriptName VPI_GameUtilities
-
-;;
-;; MAJOR NOTE: ALL FUNCTIONS MUST BE GLOBAL WITHOUT CREATION KIT
-;;
+ScriptName Venworks:Core:Utilities:Game Extends ScriptObject hidden
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;

@@ -1,16 +1,11 @@
-ScriptName VPI_TravelUtilities
-
-;;
-;; MAJOR NOTE: ALL FUNCTIONS MUST BE GLOBAL WITHOUT CREATION KIT
-;;
+ScriptName Venworks:Core:Utilities:Travel
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;; Functions
 ;;;
 
-;; Call using: CGF "VPI_TravelUtilities.SomeWhatSafeFastTravel"
-Function SomeWhatSafeFastTravel(ObjectReference marker) Global
+Function SomeWhatSafeFastTravel(ObjectReference marker)
   Actor PlayerRef = Game.GetPlayer()
   
   If(marker.IsInInterior() == true)
@@ -25,8 +20,7 @@ Function SomeWhatSafeFastTravel(ObjectReference marker) Global
   Utility.Wait(1.0)
 EndFunction
 
-;; Call using: CGF "VPI_TravelUtilities.SomeWhatSafeMoveTo" 
-Function SomeWhatSafeMoveTo(ObjectReference marker) Global
+Function SomeWhatSafeMoveTo(ObjectReference marker)
   Actor PlayerRef = Game.GetPlayer()
   
   If(marker.IsInInterior() == true)
@@ -41,15 +35,13 @@ Function SomeWhatSafeMoveTo(ObjectReference marker) Global
   Utility.Wait(1.0)
 EndFunction
 
-;; Call using: CGF "VPI_TravelUtilities.MarkerIsCurrentLocation" 
-Bool Function MarkerIsCurrentLocation(ObjectReference marker) Global
+Bool Function MarkerIsCurrentLocation(ObjectReference marker)
   Location markerLocation = marker.GetCurrentLocation()
   Location playerLocation = Game.GetPlayer().GetCurrentLocation()
   return markerLocation == playerLocation
 EndFunction
 
-;; Call using: CGF "VPI_TravelUtilities.GetSomeWhatSafeMarker" 
-ObjectReference Function GetSomeWhatSafeMarker(RefCollectionAlias knownMarkers) Global
+ObjectReference Function GetSomeWhatSafeMarker(RefCollectionAlias knownMarkers)
   ObjectReference mapMarkerRef = None
   While (mapMarkerRef == None)
     mapMarkerRef = knownMarkers.GetRandom()
