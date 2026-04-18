@@ -1,0 +1,15 @@
+[
+	"Data\\Scripts\\Venworks\\Core\\ApplySpellToTarget.pex",
+	"Data\\Scripts\\Venworks\\Core\\DataEnums.pex",
+	"Data\\Scripts\\Venworks\\Core\\Inject_InventoryItem.pex",
+	"Data\\Scripts\\Venworks\\Core\\Inject_LeveledListItem.pex",
+	"Data\\Scripts\\Venworks\\Core\\Inject_SpellToPlayer.pex",
+	"Data\\Scripts\\Venworks\\Core\\Inventory.pex",
+	"Data\\Scripts\\Venworks\\Core\\Logging.pex",
+	"Data\\Scripts\\Venworks\\Core\\Messaging.pex",
+	"Data\\Scripts\\Venworks\\Core\\PlayerLevelHandlerScript.pex",
+	"Data\\Scripts\\Venworks\\Core\\Utilities\\Game.pex",
+	"Data\\Scripts\\Venworks\\Core\\Utilities\\Scaling.pex",
+	"Data\\Scripts\\Venworks\\Core\\Utilities\\Travel.pex",
+	"Data\\Scripts\\Venworks\\Core\\Console\\Travel.pex"
+]
