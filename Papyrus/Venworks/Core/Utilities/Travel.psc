@@ -5,7 +5,7 @@ ScriptName Venworks:Core:Utilities:Travel
 ;;; Functions
 ;;;
 
-Function SomeWhatSafeFastTravel(ObjectReference marker)
+Function SomeWhatSafeFastTravel(ObjectReference marker) Global
   Actor PlayerRef = Game.GetPlayer()
   
   If(marker.IsInInterior() == true)
@@ -20,7 +20,7 @@ Function SomeWhatSafeFastTravel(ObjectReference marker)
   Utility.Wait(1.0)
 EndFunction
 
-Function SomeWhatSafeMoveTo(ObjectReference marker)
+Function SomeWhatSafeMoveTo(ObjectReference marker) Global
   Actor PlayerRef = Game.GetPlayer()
   
   If(marker.IsInInterior() == true)
@@ -35,13 +35,13 @@ Function SomeWhatSafeMoveTo(ObjectReference marker)
   Utility.Wait(1.0)
 EndFunction
 
-Bool Function MarkerIsCurrentLocation(ObjectReference marker)
+Bool Function MarkerIsCurrentLocation(ObjectReference marker) Global
   Location markerLocation = marker.GetCurrentLocation()
   Location playerLocation = Game.GetPlayer().GetCurrentLocation()
   return markerLocation == playerLocation
 EndFunction
 
-ObjectReference Function GetSomeWhatSafeMarker(RefCollectionAlias knownMarkers)
+ObjectReference Function GetSomeWhatSafeMarker(RefCollectionAlias knownMarkers) Global
   ObjectReference mapMarkerRef = None
   While (mapMarkerRef == None)
     mapMarkerRef = knownMarkers.GetRandom()
