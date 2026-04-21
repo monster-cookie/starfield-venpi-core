@@ -1,4 +1,4 @@
-ScriptName Venworks:Core:Messaging
+ScriptName Venworks:Core:Messaging Extends ScriptObject hidden
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
