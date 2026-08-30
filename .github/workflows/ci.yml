@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint-powershell:
+    name: Lint PowerShell
+    runs-on: ubuntu-latest
+    env:
+      PSSCRIPTANALYZER_VERSION: "1.25.0"
+      PSSCRIPTANALYZER_PATH: ./Tools
+      PSSCRIPTANALYZER_SETTINGS: ./PSScriptAnalyzerSettings.psd1
+    steps:
+      # GitHub-authored actions must remain pinned to full commit SHAs.
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install PSScriptAnalyzer
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+
+          Install-Module -Name PSScriptAnalyzer -RequiredVersion $env:PSSCRIPTANALYZER_VERSION -Repository PSGallery -Scope CurrentUser -Force
+
+      - name: Analyze PowerShell sources
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+
+          Import-Module PSScriptAnalyzer -RequiredVersion $env:PSSCRIPTANALYZER_VERSION -Force
+          $findings = @(
+            Invoke-ScriptAnalyzer `
+              -Path $env:PSSCRIPTANALYZER_PATH `
+              -Recurse `
+              -Settings $env:PSSCRIPTANALYZER_SETTINGS
+          )
+          foreach ($finding in $findings) {
+            Write-Output ('{0} [{1}] {2}:{3} {4}' -f
+              $finding.RuleName,
+              $finding.Severity,
+              $finding.ScriptPath,
+              $finding.Line,
+              $finding.Message)
+          }
+          if ($findings.Count -ne 0) {
+            throw "PSScriptAnalyzer reported $($findings.Count) finding(s)."
+          }
