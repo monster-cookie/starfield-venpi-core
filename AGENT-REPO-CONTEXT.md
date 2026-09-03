@@ -61,19 +61,21 @@ The project currently uses these workflow states:
 
 | State       | Group       | Current UUID                           |
 | ----------- | ----------- | -------------------------------------- |
-| Backlog     | `backlog`   | `41c224ff-cb7f-41a1-a211-c5df27730e7c` |
-| Todo        | `unstarted` | `fc2ac5b9-51fb-4aeb-a11c-99b070866d09` |
-| In Progress | `started`   | `20fe698c-1900-4dc7-b908-6963736dec7f` |
-| In Review   | `started`   | `99fc980a-166d-49b4-9e53-ae94c2a921dd` |
-| Done        | `completed` | `4060b3bc-24a8-49fc-a779-b9556b0bdc8a` |
-| Cancelled   | `cancelled` | `a9ee79bc-a34c-4beb-8750-6fe12fc212a6` |
+| Backlog     | `backlog`   | `26ad7d55-864b-4496-85df-a59128a84e9f` |
+| Todo        | `unstarted` | `34f5bd46-8ddc-4e6c-8416-d138d411b79c` |
+| In Progress | `started`   | `11b93b06-f39a-485a-9071-4e1f56c726a5` |
+| Done        | `completed` | `0e95ae13-a9bd-4657-8463-bcb39f57e624` |
+| Cancelled   | `cancelled` | `20e1fbcd-fa09-4f8b-bfe2-d6f50bce7caf` |
+
+The project has no In Review state. Preserve In Progress during review and human acceptance; do not create a workflow state implicitly.
 
 The project currently uses these work-item types:
 
 | Type | Current UUID                           |
 | ---- | -------------------------------------- |
-| Task | `eb7e11ea-e117-448d-b49d-da726fc1336d` |
-| Epic | `f069377a-5d9a-4a27-a963-b1fafe1f6af0` |
+| Task | `2c207078-2007-4e97-a170-78e12ecc1fc9` |
+| Epic | `80c4d5dc-2197-48f8-b54d-9a22da019460` |
+| Bug  | `4da817f6-ce2a-47e7-aa7c-f42154c07b9e` |
 
 Refresh the project's states and types before mutations. If a stored UUID no longer resolves to the expected name and group, stop and ask the user how to proceed.
 
@@ -87,14 +89,14 @@ The intended automation account is currently:
 
 | Display name | Member UUID                            |
 | ------------ | -------------------------------------- |
-| Paseo        | `fe284e57-9057-4570-9f91-db9917732350` |
+| Codex        | `fe284e57-9057-4570-9f91-db9917732350` |
 
 The MCP may authenticate as a different workspace member. The result of `member me` does not automatically identify the intended work-item assignee.
 
 Before assigning agent work:
 
 1. List the current project members.
-2. Verify that member UUID `fe284e57-9057-4570-9f91-db9917732350` still represents the `Paseo` automation account.
+2. Verify that member UUID `fe284e57-9057-4570-9f91-db9917732350` still represents the `Codex` automation account.
 3. Inspect the work item's current assignees.
 4. Stop if another person or agent has conflicting ownership.
 5. Assign or unassign members only when that mutation is included in the approved task-specific plan.
@@ -109,7 +111,7 @@ For new implementation:
 2. Confirm that it is a Task in Backlog or Todo, or that the user explicitly approved work in another state.
 3. Inspect its parent, dependencies, relations, description, labels, comments, assignment, and definition of done.
 4. Confirm that dependencies are ready and no conflicting owner is assigned.
-5. Assign it to the verified `Paseo` member only when authorized by the approved plan.
+5. Assign it to the verified `Codex` member only when authorized by the approved plan.
 6. Move it to In Progress only when authorized by the approved plan.
 7. Re-read the work item and verify its project, assignee, and In Progress state before editing repository files.
 
@@ -158,9 +160,9 @@ After implementation and available validation are complete:
    - known limitations or blockers;
    - exact branch and baseline;
    - commit hash and pull-request URL when available.
-5. Move the work item to In Review only when that state mutation is authorized.
-6. Re-read the work item and verify the In Review state.
-7. Keep it In Review while independent review or human acceptance remains.
+5. Preserve In Progress because this project has no In Review state.
+6. Re-read the work item and verify its state and assignment.
+7. Keep it In Progress while independent review or human acceptance remains, unless the user separately approves a different live state.
 
 Repository or pull-request review is the authoritative source for code-review findings. Plane records the work-item state and delivery handoff; it does not replace review of the exact Git diff.
 
@@ -171,7 +173,7 @@ Only the user may approve final completion.
 Require explicit action-time confirmation immediately before:
 
 - recording final acceptance;
-- moving a work item from In Review to Done; or
+- moving a work item to Done; or
 - removing its active assignee as part of completion.
 
 After confirmation:
