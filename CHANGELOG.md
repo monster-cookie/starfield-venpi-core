@@ -1,6 +1,6 @@
 # Venworks Core Utilities and Shared Objects
 
-## Version 2.1.6 (UNRELEASED)
+## Version 2.1.6 (September 3, 2026)
 
 - Added functions from generating, testing, and parsing UUIDs
 
