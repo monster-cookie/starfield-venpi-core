@@ -1,5 +1,10 @@
 # Venworks Core Utilities and Shared Objects
 
+## Unreleased
+
+- VWCORE-5: Add explicitly invoked `Utilities/Console.psc` helpers for single-line and block console diagnostics, with caller-owned labels and rejection of embedded line breaks.
+- Add a visual probe, focused junction-safe compiler/staging helper, and isolated source/publication regressions. Core 2.1.6 release archives, ESM, version metadata, and existing logging remain unchanged; PC display acceptance is pending.
+
 ## Version 2.1.6 (September 3, 2026)
 
 - Added functions from generating, testing, and parsing UUIDs

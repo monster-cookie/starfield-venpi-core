@@ -21,6 +21,10 @@ Release-specific expectations are documented in [Release Packaging(Documentation
 
 ## Local Tooling
 
+### Console output diagnostic increment
+
+The [console output helpers](Documentation/ConsoleOutput.md) provide explicitly invoked `Venworks:Core:Utilities:Console.ConsoleEcho` and `ConsoleEchoBlock`. Callers supply their own labels; Core adds a neutral `=> ` prefix through `Debug.ExecuteConsole`. `Tools/buildConsoleUtilities.ps1` compiles and stages only these two scripts and their sources using the existing junction checks. This unreleased increment does not rebuild Core 2.1.6 archives; Canvas pins the new scripts in its diagnostic Host package. Visible output and prefix behavior still require the documented PC checks.
+
 ### UUID diagnostic increment
 
 The new [UUID utilities](Documentation/UUID.md) accept case-insensitive supplied identities and provide an explicit convenience generator. `Tools/buildUuidUtilities.ps1` compiles only their source/runtime files without synchronizing unrelated staging content or rebuilding release BA2s. Canvas's GUID probe packages these pinned scripts explicitly; existing Core release archives are unchanged and do not yet deliver this utility. See the linked guide for runtime test commands and the release boundary.
