@@ -8,19 +8,19 @@ Function ConsoleEcho(String text = "") Global
   If (text != "")
     Int[] chars = Utility.SplitStringChars(text)
     If (chars == None)
-      Debug.ExecuteConsole("=> CONSOLE_ECHO_REJECTED_INPUT")
+      Debug.ExecuteConsole("RM> CONSOLE_ECHO_REJECTED_INPUT")
       Return
     EndIf
     Int index = 0
     While (index < chars.Length)
       If (chars[index] == 10 || chars[index] == 13)
-        Debug.ExecuteConsole("=> CONSOLE_ECHO_REJECTED_MULTILINE | Use ConsoleEchoBlock with one line per entry.")
+        Debug.ExecuteConsole("RM> CONSOLE_ECHO_REJECTED_MULTILINE | Use ConsoleEchoBlock with one line per entry.")
         Return
       EndIf
       index += 1
     EndWhile
   EndIf
-  Debug.ExecuteConsole("=> " + text)
+  Debug.ExecuteConsole("RM> " + text)
 EndFunction
 
 ; Echo each array entry through the same single-line policy. None/empty arrays emit nothing.

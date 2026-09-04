@@ -1,8 +1,9 @@
 # Venworks Core Utilities and Shared Objects
 
-## Version 2.1.7 (September 3, 2026)
+## Version 2.1.8 (September 3, 2026)
 
 - Add global function helpers in `Utilities/Console.psc` for single-line and block console diagnostics, with caller-owned labels and rejection of embedded line breaks.
+- Fixed the console prefix to no cause the command not found error. TSD is a special disabled command so no error. but means everythigng will be TSD> prefixed.
 
 ## Version 2.1.6 (September 3, 2026)
 
