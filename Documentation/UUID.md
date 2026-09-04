@@ -18,7 +18,25 @@ For a published consumer, obtain a UUID from any suitable source and retain it a
 
 ## Focused build and current packaging boundary
 
-Run `Tools/buildUuidUtilities.ps1 -CompilerPath <PapyrusCompiler.exe> -FlagsPath <Starfield_Papyrus_Flags.flg> -GameSourcePath <BGS-source-directory>`. It compiles only UUID and UUIDTests into a fresh temporary directory, checks exit status, binary header, source stability and staged hashes, and copies only their PSC/PEX pairs to Staging. It does not synchronize other scripts, alter plugin records, or rebuild Core release archives. Old staged-source deletions are not repaired by this operation.
+Run `Tools/buildUuidUtilities.ps1 -CompilerPath <PapyrusCompiler.exe> -FlagsPath <Starfield_Papyrus_Flags.flg> -GameSourcePath <BGS-source-directory>` in PowerShell 7 on Windows. It compiles only UUID and UUIDTests into a fresh temporary directory, checks exit status, binary header, source stability and staged hashes, and copies only their PSC/PEX pairs to the physical staging target. It does not synchronize other scripts, alter plugin records, or rebuild Core release archives. Old staged-source deletions are not repaired by this operation.
+
+The helper and reusable validation functions live in `Tools`, not `.work`. `-EnvironmentPath` optionally selects an environment file; the default is the repository's `.env`, regardless of the current working directory. The helper reads exactly one nonempty `MODULE_DATABASE_PATH` setting, allowing optional matching quotes. It does not execute the file, expand variables, import unrelated settings, or print their contents. Use an explicit local absolute path to a dedicated existing module directory outside the repository, not a drive/profile root, device path, or redirected directory.
+
+Before starting the compiler or creating its temporary output, the helper requires the repository's existing `Staging` junction to match that configured physical directory (case-insensitive normalized Windows path comparison). It rejects absent or physical staging folders, files, broken/wrong-target junctions, overlapping paths, and redirected destination entries. It never creates, removes, repairs, or retargets `Staging`. Missing child directories are created one level at a time only beneath the verified physical target; no recursive staging synchronization or deletion runs.
+
+The junction, configuration, physical target and destination paths are rechecked after compilation and before publication writes. If they change, the build stops without repair. Keep Vortex deployment and other staging writers idle during publication: repeated checks are not an atomic filesystem lock. Publication is not an all-or-nothing four-file transaction; an I/O failure or concurrent change after publication starts can leave a subset updated. Stop, inspect the error and staging state, then explicitly rerun after correcting the cause. Do not delete or recreate a working junction to recover a failed compile.
+
+### Isolated helper safety tests
+
+Run from the Core repository in PowerShell 7:
+
+```powershell
+pwsh -NoProfile -File .\Tools\testUuidBuildSafety.ps1
+Invoke-ScriptAnalyzer -Path .\Tools -Recurse -Settings .\PSScriptAnalyzerSettings.psd1
+git diff --check
+```
+
+The safety harness copies the tracked helper and sources into disposable fixtures, using only fixture-specific environment files and junctions. It tests rejection before compiler execution/output creation, publication boundaries, compiler failure, and junction/destination changes. Its synthetic compiler produces header-shaped test bytes, not playable PEX files. Add `-CompilerPath <PapyrusCompiler.exe> -FlagsPath <Starfield_Papyrus_Flags.flg> -GameSourcePath <BGS-source-directory>` to the test command to also build real UUID scripts into an isolated module fixture. Neither mode writes the real staging folder. Successful fixtures are removed by unlinking fixture junctions without traversing them; failed fixtures are retained with their location reported. PSScriptAnalyzer must already be available; these commands install nothing.
 
 The Canvas GUID diagnostic package explicitly pins and includes these PEX files with its existing Core fixture. Existing Core release BA2s do not yet include them; this focused change is not a standalone Core release. A separately approved release build must package the production utility before advertising release availability. The tests are explicit diagnostic scripts, not automatic startup behavior.
 
