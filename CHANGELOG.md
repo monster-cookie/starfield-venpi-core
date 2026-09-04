@@ -1,5 +1,9 @@
 # Venworks Core Utilities and Shared Objects
 
+## Version 2.1.6 (UNRELEASED)
+
+- Added functions from generating, testing, and parsing UUIDs
+
 ## Version 2.1.5
 
 - Create Archives will no longer pull in any existing archives.

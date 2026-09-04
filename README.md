@@ -21,6 +21,10 @@ Release-specific expectations are documented in [Release Packaging(Documentation
 
 ## Local Tooling
 
+### UUID diagnostic increment
+
+The new [UUID utilities](Documentation/UUID.md) accept case-insensitive supplied identities and provide an explicit convenience generator. `Tools/buildUuidUtilities.ps1` compiles only their source/runtime files without synchronizing unrelated staging content or rebuilding release BA2s. Canvas's GUID probe packages these pinned scripts explicitly; existing Core release archives are unchanged and do not yet deliver this utility. See the linked guide for runtime test commands and the release boundary.
+
 Most local workflows are driven through scripts in `Tools/`. They expect a configured `.env` and local Starfield/Creation Kit tooling.
 
 Common scripts:
