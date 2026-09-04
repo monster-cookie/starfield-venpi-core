@@ -1,91 +1,14 @@
 ﻿#######################################
-## Visual Studio Exclusions
+## Papyrus Exclusions
 
-# User-specific files
-*.rsuser
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-*.userprefs
-
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-[Ww][Ii][Nn]32/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
+# Log Files
 [Ll]og/
 [Ll]ogs/
-
-# MSTest test Results
-[Tt]est[Rr]esult*/
-[Bb]uild[Ll]og.*
-
-# NUnit
-*.VisualState.xml
-TestResult.xml
-nunit-*.xml
-
-# .NET Core
-project.lock.json
-project.fragment.lock.json
-artifacts/
-
-# StyleCop
-StyleCopReport.xml
-
-# Files dynamically built by Visual Studio
-*_i.c
-*_p.c
-*_h.h
-*.ilk
-*.meta
-*.obj
-*.iobj
-*.pch
-*.pdb
-*.ipdb
-*.pgc
-*.pgd
-*.rsp
-*.sbr
-*.tlb
-*.tli
-*.tlh
-*.tmp
-*.tmp_proj
-*_wpftmp.csproj
 *.log
-*.tlog
-*.vspscc
-*.vssscc
-.builds
-*.pidb
-*.svclog
-*.scc
-
-# NuGet Packages
-*.nupkg
-# NuGet Symbol Packages
-*.snupkg
-# The packages folder can be ignored because of Package Restore
-**/[Pp]ackages/*
-
-# Visual Studio 2015/2017 cache/options directory
-.vs/
-
 
 #######################################
 ## VSCode Exclusions
-# VS Code files for those working on multiple tools
+
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -110,15 +33,18 @@ Public*
 Dist*
 publish/
 
-# Misc git files from the submodule-shared-code repo
-Source/Papyrus/QOG/Shared/.editorconfig
-Source/Papyrus/QOG/Shared/.gitignore
-Source/Papyrus/QOG/Shared/README.md
-Source/Papyrus/QOG/Shared/submodule-shared-code.code-workspace
-
 # MO2 Meta files when folder junction is being used
 meta.ini
 
 # Converted Art Resources from the pipeline
 art-converted/
+
+# Codex/GitHub Actions
+artifacts/
+
+# Codex local work tree
+.work/
+
+# Backup and temp files
 *.bak
+*.tmp
